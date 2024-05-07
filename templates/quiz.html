@@ -14,14 +14,14 @@
 </div>
 
 <div id="question"></div>
-<h2>White to move: what is the best move for a smother mate:</h2>
+<h2>White to move: what is the next best move for this kind of mate:</h2>
     <form id="answerForm">
         <input type="text" id="answer" name="answer" placeholder="Enter your answer here">
         <input type="submit" value="Submit">
     </form>
     <div id="feedback"></div>
 
-<img id="nextImage" src="{{ url_for('static', filename='Group.jpg') }}"/>
+<img id="nextImage" class="next-button" src="{{ url_for('static', filename='Group.jpg') }}"/>
 
 <button id="complete">Finish!</button>
 

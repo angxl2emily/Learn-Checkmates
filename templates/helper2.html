@@ -5,9 +5,27 @@
 {% endblock %}
 
 {% block screencaps %}
-<img src="{{ url_for('static', filename = 'helper1.png') }}">
-<img src="{{ url_for('static', filename = 'helper2.png') }}">
-<img src="{{ url_for('static', filename = 'helper3.png') }}">
-<a href="/ladder"><img src="{{ url_for('static', filename = 'Group.jpg') }}"/></a>
+<div class="image-container">
+    <div class="image-wrapper">
+        <img src="{{ url_for('static', filename = 'helper1.png') }}">
+        <div class="image-overlay">
+            <span class="overlay-text">With only a queen cornering the king, the king can simply capture the queen to get out of check</span>
+        </div>
+    </div>
+    <div class="image-wrapper">
+        <img src="{{ url_for('static', filename = 'helper2.png') }}">
+        <div class="image-overlay">
+            <span class="overlay-text">With a helper, this case the bishop, protecting the queen, the king can no longer captures the queen, since that would put the king in check by the helper piece.</span>
+        </div>
+    </div>
+    <div class="image-wrapper">
+        <img src="{{ url_for('static', filename = 'helper3.png') }}">
+        <div class="image-overlay">
+            <span class="overlay-text">We want to be careful, however, that the queen is in the correct position to block off every one of the king's escape squares</span>
+        </div>
+    </div>
+</div>
+
+<a href="/ladder" class="next-button"><img src="{{ url_for('static', filename = 'Group.jpg') }}"/></a>
 
 {% endblock %}

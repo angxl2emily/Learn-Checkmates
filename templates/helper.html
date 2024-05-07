@@ -5,8 +5,10 @@
 {% endblock %}
 
 {% block video %}
-<p>[there is a video here]</p>
-<!-- Add video content here -->
-<a href="/helper2"><img src="{{ url_for('static', filename = 'Group.jpg') }}"/></a>
+<div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/D-OnAqRKu7o" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<a href="/helper2" class="next-button"><img src="{{ url_for('static', filename = 'Group.jpg') }}"/></a>
 {% endblock %}
 

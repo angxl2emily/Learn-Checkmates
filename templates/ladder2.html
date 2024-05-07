@@ -5,9 +5,27 @@
 {% endblock %}
 
 {% block screencaps %}
-<img src="{{ url_for('static', filename = 'ladder1.png') }}">
-<img src="{{ url_for('static', filename = 'ladder2.png') }}">
-<img src="{{ url_for('static', filename = 'ladder3.png') }}">
-<a href="/smother"><img src="{{ url_for('static', filename = 'Group.jpg') }}"/></a>
+<div class="image-container">
+    <div class="image-wrapper">
+        <img src="{{ url_for('static', filename = 'ladder1.png') }}">
+        <div class="image-overlay">
+            <span class="overlay-text">The rook with the blue area acts as a barrier, disallowing the king to move left. We want to continue limiting where the king can move, so we move the rook on e4 to the next column to check the king.</span>
+        </div>
+    </div>
+    <div class="image-wrapper">
+        <img src="{{ url_for('static', filename = 'ladder2.png') }}">
+        <div class="image-overlay">
+            <span class="overlay-text">With one rook blocking off the f file, and the other checking the kind on the g file, the king can only move to to h file.</span>
+        </div>
+    </div>
+    <div class="image-wrapper">
+        <img src="{{ url_for('static', filename = 'ladder3.png') }}">
+        <div class="image-overlay">
+            <span class="overlay-text">We then move the rook that's farther away to check the king and control the only available file for the king, in this case the h file. Notice the rooks move, as if climbing a ladder, to chase the king.</span>
+        </div>
+    </div>
+</div>
+
+<a href="/smother" class="next-button"><img src="{{ url_for('static', filename = 'Group.jpg') }}"/></a>
 
 {% endblock %}

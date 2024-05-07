@@ -5,9 +5,27 @@
 {% endblock %}
 
 {% block screencaps %}
-<img src="{{ url_for('static', filename = 'smother1.png') }}">
-<img src="{{ url_for('static', filename = 'smother2.png') }}">
-<img src="{{ url_for('static', filename = 'smother3.png') }}">
-<a href="/quiz"><img src="{{ url_for('static', filename = 'Group.jpg') }}"/></a>
+<div class="image-container">
+    <div class="image-wrapper">
+        <img src="{{ url_for('static', filename = 'smother1.png') }}">
+        <div class="image-overlay">
+            <span class="overlay-text">First, notice that the king is trapped behind his own pawns. If I check the king with my queen, his only option is to capture the queen with the rook on d8, which completely traps the king with his own pieces.</span>
+        </div>
+    </div>
+    <div class="image-wrapper">
+        <img src="{{ url_for('static', filename = 'smother2.png') }}">
+        <div class="image-overlay">
+            <span class="overlay-text">The king's only option to get out of check is to capture the queen with his rook. Sacrificing out queen, notice that c7 is an unprotected square.</span>
+        </div>
+    </div>
+    <div class="image-wrapper">
+        <img src="{{ url_for('static', filename = 'smother3.png') }}">
+        <div class="image-overlay">
+            <span class="overlay-text">Moving our knight to c7, we checkmate the king since he has no way to escape or to capture our knight. The king thus "smothers" himself surrounded by his own pieces.</span>
+        </div>
+    </div>
+</div>
+
+<a href="/quiz" class="next-button"><img src="{{ url_for('static', filename = 'Group.jpg') }}"/></a>
 
 {% endblock %}
