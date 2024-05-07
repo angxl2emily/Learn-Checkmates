@@ -7,35 +7,58 @@ questions = [
     {
         "id": 1,
         "type": "helper",
-        "image_path": "/static/helper1.png",
-        "answer":"blah"
+        "image_path": "/static/quiz1.png",
+        "answer":"qd7"
     },
     {
         "id": 2,
-        "type": "smother",
-        "image_path": "/static/helper2.png",
-        "answer":"blah2"
+        "type": "helper",
+        "image_path": "/static/quiz2.png",
+        "answer":"qg8"
 
     },
     {
         "id": 3,
-        "type": "ladder",
-        "image_path": "/static/helper3.png",
-        "answer":"blah3"
+        "type": "helper",
+        "image_path": "/static/quiz3.png",
+        "answer":"qg7"
     },
     {
         "id": 4,
-        "type": "random",
-        "image_path": "/static/helper3.png",
-        "answer":"blah4"
+        "type": "ladder",
+        "image_path": "/static/quiz4.png",
+        "answer":"ra3"
     },
-    # Add more questions as needed, each with an id, type, and image path
+    {
+        "id": 5,
+        "type": "ladder",
+        "image_path": "/static/quiz5.png",
+        "answer":"rh7"
+    },
+    {
+        "id": 6,
+        "type": "ladder",
+        "image_path": "/static/quiz6.png",
+        "answer":"rb2"
+    },
+    {
+        "id": 7,
+        "type": "smother",
+        "image_path": "/static/quiz7.png",
+        "answer":"qb8"
+    },
+    {
+        "id": 8,
+        "type": "smother",
+        "image_path": "/static/quiz8.png",
+        "answer":"Nf7"
+    },
 ]
 answers = [
     {
         "question_id": 1,
         "user_answer": "",
-        "correct": True  # This should be True if the answer is correct, False otherwise
+        "correct": False  # This should be True if the answer is correct, False otherwise
     },
     {
         "question_id": 2,
