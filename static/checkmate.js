@@ -95,6 +95,9 @@ $(document).ready(function() {
     // Event listener for the "Next Image" button click
     $('#nextImage').on('click', function(event) {
         event.preventDefault(); // Prevent the default action (navigation)
+        
+        $('#answer').val(''); // Clear the textbox
+        $('#feedback').text(''); // Clear the feedback div
 
         // Make an AJAX request to the server to get the next question image
         $.ajax({
@@ -104,28 +107,31 @@ $(document).ready(function() {
                 // Update the question div with the next question image and description
                 const contentDiv = $('#question');
                 contentDiv.html(''); // Clear current content
-
+    
                 // Create an img element for the question image
                 const questionImage = $('<img>', {
                     src: data.image_url,
                     alt: 'Next Question'
                 });
-
+    
                 // Append the question image to the content div
                 contentDiv.append(questionImage);
-
+    
                 // If there is any description provided in the response, append it
                 if (data.description) {
                     const description = $('<p>').text(data.description);
                     contentDiv.append(description);
                 }
-
-                // Update the current question ID
+    
+                // Update the current question ID immediately after receiving the response
                 currentQuestionId = data.id;
-
-                // Clear the textbox and feedback div
-                $('#answer').val(''); // Clear the textbox
-                $('#feedback').text(''); // Clear the feedback div
+                console.log(currentQuestionId);
+    
+                // Check if the current question ID is 8
+                if (currentQuestionId === 8) {
+                    $('#nextImage').hide();
+                    $('#complete').show();
+                }
             },
             error: function(error) {
                 console.error('Error fetching next question image:', error);
