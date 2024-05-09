@@ -107,3 +107,26 @@ p {
     text-align: center;
     padding: 20px;
 }
+
+.containQ {
+    display: flex;
+    align-items: flex-start; /* Adjust alignment as needed */
+}
+
+#question,
+#prompt {
+    flex: 1;
+}
+
+/* Optional styling */
+#question {
+    padding: 10px;
+}
+
+#prompt {
+    padding: 10px;
+}
+
+#correction {
+    color: red;
+}

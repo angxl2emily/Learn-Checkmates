@@ -55,10 +55,10 @@ $(document).ready(function() {
     // Event listener for form submission
     $('#answerForm').on('submit', function(event) {
         event.preventDefault(); // Prevent the default form submission
-
+        $('#correction').text('');
         // Get the user's answer from the input field
         const userAnswer = $('#answer').val().trim();
-
+    
         // Make an AJAX request to the server to check the user's answer
         $.ajax({
             url: '/check-answer',
@@ -75,6 +75,8 @@ $(document).ready(function() {
                     feedbackDiv.text('Correct!');
                 } else {
                     feedbackDiv.text('Wrong');
+                    // Populate the correction div with the explanation for incorrect answer
+                    $('#correction').text(response.explanation);
                 }
             },
             error: function(error) {
@@ -96,8 +98,9 @@ $(document).ready(function() {
     $('#nextImage').on('click', function(event) {
         event.preventDefault(); // Prevent the default action (navigation)
         
-        $('#answer').val(''); // Clear the textbox
-        $('#feedback').text(''); // Clear the feedback div
+        $('#answer').val(''); 
+        $('#feedback').text(''); 
+        $('#correction').text('');
 
         // Make an AJAX request to the server to get the next question image
         $.ajax({
