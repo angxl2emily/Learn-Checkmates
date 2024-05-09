@@ -8,50 +8,59 @@ questions = [
         "id": 1,
         "type": "helper",
         "image_path": "/static/quiz1.png",
-        "answer":"qd7"
+        "answer":"qd7",
+        "explanation":"The answer is qd7 since that is the square where the bishop protects the queen, and the queen prevents the king from escaping check."
     },
     {
         "id": 2,
         "type": "helper",
         "image_path": "/static/quiz2.png",
-        "answer":"qg8"
+        "answer":"qg8",
+        "explanation": "The answer is qg8 since that is the square where the knight protects the queen, and the queen prevents the king from escaping check."
 
     },
     {
         "id": 3,
         "type": "helper",
         "image_path": "/static/quiz3.png",
-        "answer":"qg7"
+        "answer":"qg7",
+        "explanation": "The answer is qg7 since that is the square where the rook protects the queen, and the queen prevents the king from escaping check."
     },
     {
         "id": 4,
         "type": "ladder",
         "image_path": "/static/quiz4.png",
-        "answer":"ra3"
+        "answer":"ra3",
+        "explanation": "The answer is ra3 because while the rook on b2 blocks the b file, ra3 allows the second rook to block the a file, and the king has no place to escape"
     },
     {
         "id": 5,
         "type": "ladder",
         "image_path": "/static/quiz5.png",
-        "answer":"rh7"
+        "answer":"rh7",
+        "explanation": "The answer is rh7 because that continues to limit the king's available squares in a ladder motion, forcing the king into the last available row, row 8."
     },
     {
         "id": 6,
         "type": "ladder",
         "image_path": "/static/quiz6.png",
-        "answer":"rb2"
+        "answer":"rb2",
+        "explanation": "The answer is rb2 because that continues to limit the king's available squares in a ladder motion, forcing the king into the last available file, column a."
+
     },
     {
         "id": 7,
         "type": "smother",
         "image_path": "/static/quiz7.png",
-        "answer":"qb8"
+        "answer":"qb8",
+        "explanation":"The answer is qb8 because that successfully traps the king, since the only available move for black is to capture the queen with the rook."
     },
     {
         "id": 8,
         "type": "smother",
         "image_path": "/static/quiz8.png",
-        "answer":"Nf7"
+        "answer":"Nf7",
+        "explanation": "The answer is Nf7 because that successfully checkmates the king. There is no option for the king to run away, and knight attacks can't be blocked."
     },
 ]
 answers = [
@@ -168,8 +177,10 @@ def check_answer():
             }
             answers.append(answer_entry)
 
-        # Get the correct answer from the question
+        # Get the correct answer and explanation from the question
         correct_answer = question['answer']
+        explanation = question['explanation']
+
         # Determine if the user's answer is correct
         correct = user_answer.strip().lower() == correct_answer.strip().lower()
 
@@ -177,14 +188,12 @@ def check_answer():
         answer_entry['user_answer'] = user_answer
         answer_entry['correct'] = correct
 
-        print(answers)
-
-        # Return the result as JSON
-        return jsonify({'correct': correct})
+        # Return the result along with the explanation as JSON
+        return jsonify({'correct': correct, 'explanation': explanation})
 
     # Return an error response if the question ID is invalid
     return jsonify({'error': 'Invalid question ID'}), 400
-
+    
 @app.route('/results')
 def results():
     # Calculate the user's score
