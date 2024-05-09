@@ -9,17 +9,20 @@
         <option value="helper">Helper</option>
         <option value="ladder">Ladder</option>
         <option value="smother">Smother</option>
-        <option value="random">Random</option>
     </select>
 </div>
-
-<div id="question"></div>
-<h2>White to move: what is the next best move for this kind of mate:</h2>
-    <form id="answerForm">
-        <input type="text" id="answer" name="answer" placeholder="Enter your answer here">
-        <input type="submit" value="Submit">
-    </form>
-    <div id="feedback"></div>
+<div class="containQ">
+    <div id="question"></div>
+    <div id="prompt">
+        <h2>White to move: what is the next best move for this kind of mate:</h2>
+        <form id="answerForm">
+            <input type="text" id="answer" name="answer" placeholder="Enter your answer here">
+            <input type="submit" value="Submit">
+        </form>
+        <div id="feedback"></div>
+        <div id="correction"></div>
+    </div>
+</div>
 
 <img id="nextImage" class="next-button" src="{{ url_for('static', filename='Group.jpg') }}"/>
 
