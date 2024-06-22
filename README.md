@@ -4,7 +4,9 @@
 Created for final project in COMSW4170 User Interface Design.
 
 Future improvements:
+
 [ ] fix buggy quiz workflow
+
 [ ] add interactive drag and drop features for learning portion
 
 ## Demo
