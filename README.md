@@ -9,4 +9,4 @@ Future improvements:
 
 ## Demo
 
-[![Checkmate Challenge Demo]()](https://youtu.be/oMM7FjBg2Oc)
+[![Checkmate Challenge Demo](https://github.com/emiloom/Learn-Checkmates/blob/main/Screen%20Shot%202024-06-22%20at%2011.28.56%20AM.png)](https://youtu.be/oMM7FjBg2Oc)
